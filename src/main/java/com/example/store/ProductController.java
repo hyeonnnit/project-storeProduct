@@ -42,9 +42,12 @@ public class ProductController {
     }
 
     @GetMapping("/product/{id}/update-form")
-    public String updateForm() {
+    public String updateForm(@PathVariable Integer id, HttpServletRequest request) {
+        ProductResponse.DetailDTO product = productService.getProductDetail(id);
+        request.setAttribute("product", product);
         return "product/update-form";
     }
+
     @PostMapping("/product/{id}/update")
     public String update() {
         return "redirect:/product/" + 1;
