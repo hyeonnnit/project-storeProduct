@@ -1,5 +1,6 @@
 package com.example.store;
 
+import com.example.store._core.common.PicSaveUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +14,13 @@ public class ProductRepository {
     private final EntityManager em;
 
 
-    public void updateById() {
+    public Product updateById(int id, ProductRequest.UpdateDTO reqDTO) {
+        Product product = em.find(Product.class, id);
+        product.setName(reqDTO.getName());
+        product.setPrice(reqDTO.getPrice());
+        product.setQty(product.getQty());
+        product.setPic(PicSaveUtil.save(reqDTO.getPic()));
+        return product;
     }
 
     public void deleteById() {
