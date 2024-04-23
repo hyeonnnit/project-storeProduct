@@ -27,12 +27,16 @@ public class Product {
     @Column(nullable = false)
     private Integer qty; //수량
 
+    @Column
+    private String pic;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     @Builder
-    public Product(Integer id, String name, Integer price, Integer qty, LocalDateTime createdAt) {
+    public Product(String pic, Integer id, String name, Integer price, Integer qty, LocalDateTime createdAt) {
         this.id = id;
+        this.pic = pic;
         this.name = name;
         this.price = price;
         this.qty = qty;
