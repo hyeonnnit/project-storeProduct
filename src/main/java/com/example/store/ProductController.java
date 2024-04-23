@@ -36,7 +36,8 @@ public class ProductController {
     }
 
     @PostMapping("/product/save")
-    public String save() {
+    public String save(ProductRequest.SaveDTO reqDTO) {
+        productService.addProduct(reqDTO);
         return "redirect:/product";
     }
 
