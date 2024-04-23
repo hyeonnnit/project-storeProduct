@@ -16,7 +16,7 @@
 
 + 프로젝트 의존성 설정
 
-![image](https://github.com/hyeonnnit/project-storeProduct/assets/153695703/18efae17-2ea9-42ca-bbbe-e916fa9f8489)
+![image](https://github.com/hyeonnnit/project-storeProduct/assets/153695703/4828ea7d-597d-4342-ab38-b914cf271364)
 
 ## 3. 기본 환경 설정
 + _core - 이미지 상대경로를 위한 생성
