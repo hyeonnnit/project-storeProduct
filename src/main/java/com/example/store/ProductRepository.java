@@ -22,7 +22,8 @@ public class ProductRepository {
     public void save() {
     }
 
-    public void findById() {
+    public Product findById(int id) {
+        return em.find(Product.class, id);
     }
 
     public List<Product> findAll() {
