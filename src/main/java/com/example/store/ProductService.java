@@ -37,6 +37,11 @@ public class ProductService {
     }
 
     //상품 업데이트
+    @Transactional
+    public ProductResponse.UpdateDTO updateProduct(int id, ProductRequest.UpdateDTO reqDTO){
+        Product product = productRepository.updateById(id, reqDTO);
+        return new ProductResponse.UpdateDTO(product);
+    }
 
     //상품 삭제
 }
