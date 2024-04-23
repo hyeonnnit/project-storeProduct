@@ -23,7 +23,11 @@ public class ProductRepository {
         return product;
     }
 
-    public void deleteById() {
+    public void deleteById(int id) {
+        Query query =
+                em.createQuery("delete from Product p where p.id = :id");
+        query.setParameter("id", id);
+        query.executeUpdate();
     }
 
     public Product save(Product product) {
