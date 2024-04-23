@@ -49,8 +49,9 @@ public class ProductController {
     }
 
     @PostMapping("/product/{id}/update")
-    public String update() {
-        return "redirect:/product/" + 1;
+    public String update(@PathVariable Integer id, ProductRequest.UpdateDTO reqDTO) {
+        productService.updateProduct(id, reqDTO);
+        return "redirect:/product/" + id;
     }
 
     @PostMapping("/product/{id}/delete")
