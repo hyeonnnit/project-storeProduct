@@ -44,4 +44,8 @@ public class ProductService {
     }
 
     //상품 삭제
+    @Transactional
+    public void deleteProduct(int id){
+        productRepository.deleteById(id);
+    }
 }
