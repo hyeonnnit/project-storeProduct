@@ -31,7 +31,7 @@ public class ProductService {
 
     //상품 등록
     @Transactional
-    public ProductResponse.SaveDTO save(ProductRequest.SaveDTO reqDTO) {
+    public ProductResponse.SaveDTO addProduct(ProductRequest.SaveDTO reqDTO) {
         Product product = productRepository.save(reqDTO.toEntity());
         return new ProductResponse.SaveDTO(product);
     }
