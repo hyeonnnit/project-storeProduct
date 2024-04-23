@@ -19,7 +19,9 @@ public class ProductRepository {
     public void deleteById() {
     }
 
-    public void save() {
+    public Product save(Product product) {
+        em.persist(product);
+        return product;
     }
 
     public Product findById(int id) {
